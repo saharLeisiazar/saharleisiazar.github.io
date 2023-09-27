@@ -118,6 +118,20 @@
     <hr/>
       <!-- first experiment -->
       <div class="container" style="text-align:center; padding:1rem">
+
+        <p style="padding-top: 1em; padding-bottom: 2em">
+        The experiment is conducted in two distinct human trajectories: a circular path and an S-
+        shaped path. The results reveal that the DRL approach is
+        unable to effectively follow the human and avoid obstacles,
+        which is attributed to the training of the model in an
+        obstacle-free environment. Also, the MCTS approach fails to generate
+        consistent results, particularly around corners which is due
+        to its random action selection. In contrast, the proposed
+        MCTS-DRL method demonstrates a superior performance,
+        generating a trajectory for the robot that effectively maintains
+        a specified distance from the human, avoids occlusion and
+        collisions with obstacles, and results in a consistent and
+        stable behavior.</p>
         <pre><p><h4><em>MCTS-DRL vs MCTS and DRL</h4></p></pre> 
         <img src="resrc/exp1.png" alt="teaser.png" class="text-center" style="width: 65%; max-width: 20000px">
         <p><h5><em>Performance comparison of DRL, MCTS, MCTS-DRL for two different human trajectories. The human and robot
