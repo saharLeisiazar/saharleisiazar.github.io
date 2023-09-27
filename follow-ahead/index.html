@@ -119,6 +119,7 @@
       <!-- first experiment -->
       <div class="container" style="text-align:center; padding:1rem">
 
+        <pre><p><h4><em>MCTS-DRL vs MCTS and DRL</h4></p></pre>
         <p style="padding-top: 1em; padding-bottom: 2em">
         The experiment is conducted in two distinct human trajectories: a circular path and an S-
         shaped path. The results reveal that the DRL approach is
@@ -132,7 +133,7 @@
         a specified distance from the human, avoids occlusion and
         collisions with obstacles, and results in a consistent and
         stable behavior.</p>
-        <pre><p><h4><em>MCTS-DRL vs MCTS and DRL</h4></p></pre> 
+         
         <img src="resrc/exp1.png" alt="teaser.png" class="text-center" style="width: 65%; max-width: 20000px">
         <p><h5><em>Performance comparison of DRL, MCTS, MCTS-DRL for two different human trajectories. The human and robot
           trajectories are depicted by a line and points, respectively. The rainbow color scale indicates the time dimension, with purple
@@ -145,6 +146,24 @@
       <!-- second experiment -->
       <div class="container" style="text-align:center; padding:1rem">
         <pre><p><h4>Follow-ahead in an obstacle-free environment</u></h4></p></pre> 
+        <p style="padding-top: 1em; padding-bottom: 2em">
+          We conducted a comparison between the performance
+          of human following in an obstacle-free environment using
+          the proposed MCTS-DRL method and the LBGP method
+          proposed in [1]. The outcomes of the experiments, in
+          terms of the mean human-robot relative distance and mean
+          orientation angle (α), are presented in the following table. The results demonstrated that the robot successfully main-
+          tained the human-robot relative distance within the range
+          of [1, 2] m for all trajectories, and attempted to follow the
+          human in front. This experiment demonstrates the efficacy of
+          the proposed MCTS-DRL approach in achieving comparable
+          results to previous methods in obstacle-free environments.
+        [1] P. Nikdel, R. Vaughan, and M. Chen, “Lbgp: Learning based goal
+        planning for autonomous following in front,” in 2021 IEEE Interna-
+        tional Conference on Robotics and Automation (ICRA). IEEE, 2021,
+        pp. 3140–3146.</p>
+
+
         <p><h5 style="padding-top:2em "><em>Follow-ahead comparative results for three human trajectories in an obstacle free environment. The proximity of
           the distance to 1.5 and the orientation to 0 indicates better performance.</h5></p> 
         <img src="resrc/exp2.png" alt="teaser.png" class="text-center" style="width: 85%; max-width: 2000px">
