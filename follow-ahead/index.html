@@ -116,6 +116,7 @@
 
     <h3>Experiments</h3>
     <hr/>
+      <!-- first experiment -->
       <div class="container" style="text-align:center; padding:1rem">
         <p><h4><u><em>MCTS-DRL vs MCTS and DRL</u></h4></p> 
         <img src="resrc/exp1.png" alt="teaser.png" class="text-center" style="width: 65%; max-width: 20000px">
@@ -126,126 +127,113 @@
           behavior.</h5></p>    
       </div>
 
+      <pre></pre>
 
-  <pre>
-  </pre>
+      <!-- second experiment -->
+      <div class="container" style="text-align:center; padding:1rem">
+        <p><h4><u><em>Follow-ahead in an obstacle-free environment</u></h4></p> 
+        <p><h5><em>Follow-ahead comparative results for three human trajectories in an obstacle free environment. The proximity of
+          the distance to 1.5 and the orientation to 0 indicates better performance.</h5></p> 
+        <img src="resrc/exp2.png" alt="teaser.png" class="text-center" style="width: 85%; max-width: 2000px">
+      </div>
 
+      <pre></pre>
 
-    <!-- <p><h4><em>Follow-ahead in an obstacle-free environment</h4></p> 
-    <p><h5><em>Follow-ahead comparative results for three human trajectories in an obstacle free environment. The proximity of
-        the distance to 1.5 and the orientation to 0 indicates better performance.</h5></p>  
-    <img src="resrc/exp2.png" alt="" class="text-center" style="width: 85%; max-width: 2000px">            -->
-
-
-    <div class="container" style="text-align:center; padding:1rem">
-      <p><h4><u><em>Follow-ahead in an obstacle-free environment</u></h4></p> 
-      <p><h5><em>Follow-ahead comparative results for three human trajectories in an obstacle free environment. The proximity of
-        the distance to 1.5 and the orientation to 0 indicates better performance.</h5></p> 
-      <img src="resrc/exp2.png" alt="teaser.png" class="text-center" style="width: 85%; max-width: 2000px">
-         
-    </div>
-
-  <pre>
-  </pre>
-
-    <hrs/>
-    <div class="row" style="text-align:center; padding:3rem">
-    <p><h4><u><center><em>Obstacle and occlusion avoidance</center></u></h4></p> 
-    </div>
+      <!-- third experiment -->
+      <div class="row" style="text-align:center; padding:3rem">
+      <p><h4><u><center><em>Obstacle and occlusion avoidance</center></u></h4></p> 
+      </div>
 
       <img src="resrc/mcts.gif" alt="teaser.png" class="text-center" style="width: 100%; max-width: 2000px">
 
-        <div class="row" style="text-align:center; padding:1rem">
-            <div class="col-sm-6">
-              <img src="resrc/exp3-straight.png" alt="dti.png"  class="text-center" style="width: 100%; max-width: 1100px">
-            </div>
-            <div class="col-sm-6">
-              <img src="resrc/exp3-U.png" alt="deep_tsf.png"  class="text-center" style="width: 90%; max-width: 1100px">
-            </div>
-        </div>
+      <div class="row" style="text-align:center; padding:1rem">
+          <div class="col-sm-6">
+            <img src="resrc/exp3-straight.png" alt="dti.png"  class="text-center" style="width: 100%; max-width: 1100px">
+          </div>
+          <div class="col-sm-6">
+            <img src="resrc/exp3-U.png" alt="deep_tsf.png"  class="text-center" style="width: 90%; max-width: 1100px">
+          </div>
+      </div>
 
-        <div class="row" style="text-align:center; padding:1rem">
+      <div class="row" style="text-align:center; padding:1rem">
+          <div class="col-sm-6">
+            <p><h5><center>Performance evaluation of MCTS-DRL in the absence
+              of obstacles with the human walking in straight line (left
+              figure) and the presence of an obstacle (right figure) in
+              which the robot turned left to avoid occlusion. The robot
+              and human’s trajectories are shown with points and line,
+              respectively. The side bar shows the time starting with the
+              purple and ending with red color, respectively.</center></h5></p>
+          </div>
+          <div class="col-sm-6">
+            <p><h5><center>Performance evaluation of MCTS-DRL in the absence
+              of obstacles with the human walking in a U -shaped path
+              (left figure) and the presence of an obstacle (right figure) in
+              which the robot changed its direction to avoid occlusion. The
+              robot and human’s orientation is shown with the green arrows
+              at the time of direction altering. The robot and human’s
+              trajectories are shown with points and line, respectively. The
+              side bar shows the time starting with the purple and ending
+              with red color, respectively.</center></h5></p>
+          </div>
+      </div>
+
+      <div class="row" style="text-align:center; padding: 1rem">
+          <div class="col-sm-6">
+              <img src="resrc/exp3-S.png" alt="dti.png"  class="text-center" style="width: 100%; max-width: 1100px">
+            </div>
+            <div class="col-sm-6">
+              <img src="resrc/exp3-L.png" alt="deep_tsf.png"  class="text-center" style="width: 60%; max-width: 1100px">
+            </div>
+      </div>
+
+
+      <div class="row" style="text-align:center; padding:1rem">
             <div class="col-sm-6">
               <p><h5><center>Performance evaluation of MCTS-DRL in the absence
-                of obstacles with the human walking in straight line (left
-                figure) and the presence of an obstacle (right figure) in
-                which the robot turned left to avoid occlusion. The robot
-                and human’s trajectories are shown with points and line,
-                respectively. The side bar shows the time starting with the
-                purple and ending with red color, respectively.</center></h5></p>
+                  of obstacles with the human walking in a S-shaped path
+                  (left figure) and the presence of an obstacle (right figure) in
+                  which the robot changed its direction to avoid occlusion. The
+                  robot and human’s orientation is shown with the green arrows
+                  at the time of direction altering. The robot and human’s
+                  trajectories are shown with points and line, respectively. The
+                  side bar shows the time starting with the purple and ending
+                  with red color, respectively.</center></h5></p>
             </div>
             <div class="col-sm-6">
-              <p><h5><center>Performance evaluation of MCTS-DRL in the absence
-                of obstacles with the human walking in a U -shaped path
-                (left figure) and the presence of an obstacle (right figure) in
-                which the robot changed its direction to avoid occlusion. The
-                robot and human’s orientation is shown with the green arrows
-                at the time of direction altering. The robot and human’s
-                trajectories are shown with points and line, respectively. The
-                side bar shows the time starting with the purple and ending
-                with red color, respectively.</center></h5></p>
+              <p><h5><center>Trajectory of the robot and human navigating an
+                  L shaped path. The trajectory of the human and robot are
+                  shown with line and points, respectively. The green arrows
+                  indicate the orientation of the robot and human when the
+                  human walks toward the corner. The robot avoids colliding
+                  with obstacles and stays beside the human subject, navigating
+                  ahead of them subsequently.</center></h5></p>
             </div>
+      </div>
+
+
+      <h4 style="padding-top:0.5em">BibTeX</h4>
+      If you find this work useful for your research, please cite:
+      <div class="card">
+        <div class="card-block">
+          <pre class="card-text clickselect">
+            @inproceedings{X,
+            title={An MCTS-DRL Based Obstacle and Occlusion Avoidance Methodology in Robotic Follow-Ahead Applications},
+            author={Leisiazar, Sahar AND Park, Esward AND Lim, Angelica AND Chen, Mo},   
+            booktitle={IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
+            year={2023},
+            }
+          </pre>
         </div>
+      </div>
 
-        <div class="row" style="text-align:center; padding: 1rem">
-            <div class="col-sm-6">
-                <img src="resrc/exp3-S.png" alt="dti.png"  class="text-center" style="width: 100%; max-width: 1100px">
-              </div>
-              <div class="col-sm-6">
-                <img src="resrc/exp3-L.png" alt="deep_tsf.png"  class="text-center" style="width: 60%; max-width: 1100px">
-              </div>
-        </div>
-
-
-        <div class="row" style="text-align:center; padding:1rem">
-              <div class="col-sm-6">
-                <p><h5><center>Performance evaluation of MCTS-DRL in the absence
-                    of obstacles with the human walking in a S-shaped path
-                    (left figure) and the presence of an obstacle (right figure) in
-                    which the robot changed its direction to avoid occlusion. The
-                    robot and human’s orientation is shown with the green arrows
-                    at the time of direction altering. The robot and human’s
-                    trajectories are shown with points and line, respectively. The
-                    side bar shows the time starting with the purple and ending
-                    with red color, respectively.</center></h5></p>
-              </div>
-              <div class="col-sm-6">
-                <p><h5><center>Trajectory of the robot and human navigating an
-                    L shaped path. The trajectory of the human and robot are
-                    shown with line and points, respectively. The green arrows
-                    indicate the orientation of the robot and human when the
-                    human walks toward the corner. The robot avoids colliding
-                    with obstacles and stays beside the human subject, navigating
-                    ahead of them subsequently.</center></h5></p>
-              </div>
-        </div>
+</div>      
 
 
 
 
-        </div>      
 
 
-
-
-<!-- <div class="col-xs-0 col-lg-0"></div>
-</div> -->
-  <h4 style="padding-top:0.5em">BibTeX</h4>
-  If you find this work useful for your research, please cite:
-  <div class="card">
-    <div class="card-block">
-      <pre class="card-text clickselect">
-        @inproceedings{X,
-        title={An MCTS-DRL Based Obstacle and Occlusion Avoidance Methodology in Robotic Follow-Ahead Applications},
-        author={Leisiazar, Sahar AND Park, Esward AND Lim, Angelica AND Chen, Mo},   
-        booktitle={IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
-        year={2023},
-        }
-      </pre>
-    </div>
-  </div>
-
-</div>
 
 
 </body>
