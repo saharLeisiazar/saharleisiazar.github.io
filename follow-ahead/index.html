@@ -111,10 +111,16 @@
     <hr/>
       <div class="row" style="text-align:center; padding:1rem">
         <div class="col-sm-6">
-          <img src="resrc/mcts.png" alt="dti.png"  class="text-center" style="width: 100%; max-width: 1100px">
+          <img src="resrc/mcts.png" alt="dti.png"  class="text-center" style="width: 85%; max-width: 1100px">
         </div>
         <div class="col-sm-6">
           <!-- <img src="resrc/.png" alt="deep_tsf.png"  class="text-center" style="width: 90%; max-width: 1100px"> -->
+          <p>The proposed approach combines Monte Carlo Tree Search (MCTS) and Deep Reinforcement Learning (DRL) 
+            to efficiently explore and evaluate possible trajectories. MCTS is used to expand a decision tree 
+            considering robot and human poses, while DRL aids in node evaluation. The algorithm generates 
+            navigational goals while considering obstacle avoidance. It assigns values to nodes based on occlusions 
+            and collisions and uses the Upper Confidence Bound (UCB) to select the best node as the robot's navigational goal. 
+            This process repeats iteratively, resulting in the robot's optimal path for the next three seconds.</p>
         </div>
       </div>    
     
