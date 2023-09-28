@@ -121,6 +121,14 @@
             navigational goals while considering obstacle avoidance. It assigns values to nodes based on occlusions 
             and collisions and uses the Upper Confidence Bound (UCB) to select the best node as the robot's navigational goal. 
             This process repeats iteratively, resulting in the robot's optimal path for the next three seconds.</p>
+            <p>We used DDQN to train, in an obstacle-free environment, 
+              to obtain a Q function, which takes as input the
+              observation and actions, and produces as output the estimated expected
+              return (discounted sum of reward). During the tree expansion of MCTS, the trained Q function is
+              utilized to estimate the expected reward of each node instead of random sampling. The reward 
+              function is determined by considering the robot's relative distance and orientation:   </p>
+
+              <img src="resrc/reward.png" alt="dti.png"  class="text-center" style="width: 100%; max-width: 1100px">              
         </div>
       </div>    
     
