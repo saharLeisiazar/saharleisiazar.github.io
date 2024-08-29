@@ -1,0 +1,296 @@
+<html lang="en">
+<head>
+    <title>Follow-ahead</title>
+    <meta name="description" content="Project page for An MCTS-DRL Based Obstacle and Occlusion Avoidance Methodology in Robotic Follow-Ahead Applications.">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>    
+</head>
+<body>
+
+
+<!--Title-->    
+<div class="container" style="text-align:center; padding:2rem 15px">
+    <div class="row" style="text-align:center">
+        <h1>An MCTS-DRL Based Obstacle and Occlusion Avoidance Methodology in Robotic Follow-Ahead Applications</h1>
+        <h4>IROS 2023</h4>
+    </div>
+    <div class="row" style="text-align:center">
+        <div class="col-xs-0 col-md-3"></div>
+        <div class="col-xs-12 col-md-6">
+        <h4>
+    
+            <!-- How to write authors and how to do we need links?-->
+            <nobr>Sahar Leisiazar</nobr><sup></sup> &emsp;
+            <nobr>Edward J. Park</nobr><sup></sup> &emsp;
+            <nobr>Angelica Lim</nobr><sup></sup> </a>&emsp;
+            <nobr>Mo Chen</nobr><sup></sup></a>&emsp;
+            <!--<nobr>Angelica Lim</nobr><sup></sup> </a>&emsp;-->
+            <!-- <nobr>Hongwei Zhao</nobr><sup>1</sup> &emsp;
+            <nobr>Hongtao Lu</nobr><sup>2</sup> &emsp; -->
+            <!-- <a href="https://xishen0220.github.io/"><nobr>Xi Shen</nobr><sup>3</sup></a> -->
+        </h4>
+
+        <!-- <sup>*</sup> Equal Contribution &emsp; -->
+        <p><em><center>School of Mechatronics System Engineering, Simon Fraser University, Surrey, BC, Canada  &emsp;</center></em></p>
+        <p><em><center>School of Computing Science, Simon Fraser University, Burnaby, BC, Canada  &emsp;</center></em></p>
+        <!-- <sup>2</sup> Shanghai Jiao Tong University &emsp;
+        <sup>3</sup> Tencent AI Lab, Shenzhen -->
+        <!-- Rosie Labs, <nobr>Simon Fraser University</nobr>, <nobr>Burnaby</nobr>, British Columbia,
+        <nobr>Canada</nobr> -->
+        </div>
+        <div class="hidden-xs hidden-sm col-md-1" style="text-align:left; margin-left:0px; margin-right:0px">
+        <a href="" style="color:inherit">
+            <i class="fa fa-file-pdf-o fa-4x"></i></a> 
+        </div>
+        <!-- <div class="hidden-xs hidden-sm col-md-2" style="text-align:left; margin-left:0px;">
+        <a href="https://github.com/monniert/dti-clustering" style="color:inherit">
+            <i class="fa fa-github fa-4x"></i></a>
+        </div> -->
+    </div>
+</div>
+
+
+
+
+
+<!--Links-->
+<div class="container" style="text-align:center; padding:1rem">
+    <h3 style="text-align:center; padding-top:1rem; padding-bottom: 2em">
+      <!--<a class="label label-info" href="resrc/paper.pdf">Paper</a>
+      <a class="label label-info" href="resrc/annotate_no_gpt.csv">Annotations</a>
+      <a class="label label-info" href="resrc/annotate_gpt.csv">Annotations  w/Results</a>
+      <a class="label label-info" href="https://dev9032.d1ab6be83l9u2m.amplifyapp.com/">Annotation Website</a>
+      <a class="label label-info" href="resrc/ref.bib">BibTeX</a> -->
+      <a class="label label-info" href="resrc/arxiv-followahead.pdf">Paper</a>
+      <a class="label label-info" href="https://github.com/saharLeisiazar/follow-ahead-ros">Code</a>
+      <a class="label label-info" href="https://www.youtube.com/watch?v=sPF8eJbNYIU&list=PLMSLU9mHe0DlH-nXzEEjmA35DtHhZh5GL&index=2">Video</a>
+      <a class="label label-info" href="resrc/IROS2023-MCTS-DRL.pdf">Presentation</a>
+      <a class="label label-info" href="resrc/IROS2023_Poster.pdf">Poster</a>
+    </h3>
+    <img src="resrc/Abstract-image-iros.png" alt="teaser.png" class="text-center" style="width: 100%; max-width: 2000px">
+    <p><h5><em>llustration of the MCTS-DRL framework utilizing
+        human future estimation for goal generation. The search
+        tree is expanded to identify the best goal point to follow
+        ahead of the person, while avoiding occlusion and collision.
+        The resulting goal point is indicated by a green star, while
+        red and blue arrows represent paths leading to collision and
+        occlusion, respectively. The MCTS algorithm expands a tree
+        to find the best navigational goal for the robot in order to
+        follow-ahead of the target person and avoid collision and
+        occlusion caused by surrounding objects.</h5></p>    
+</div>
+
+
+
+<div class="container">
+    <h3>Abstract</h3>
+    <hr/>
+    <p>
+        We propose a novel methodology for robotic follow-ahead applications that address the critical challenge of obstacle and occlusion avoidance. Our approach effectively navigates the robot while ensuring avoidance of collisions
+        and occlusions caused by surrounding objects. To achieve
+        this, we developed a high-level decision-making algorithm
+        that generates short-term navigational goals for the mobile
+        robot. Monte Carlo Tree Search is integrated with a Deep
+        Reinforcement Learning method to enhance the performance
+        of the decision-making process and generate more reliable
+        navigational goals. Through extensive experimentation and
+        analysis, we demonstrate the effectiveness and superiority of
+        our proposed approach in comparison to the existing follow-ahead human-following robotic methods.
+    </p>
+
+
+
+    <h3>Approach</h3>
+    <hr/>
+      <div class="row" style="text-align:center; padding:1rem">
+        <div class="col-sm-6">
+          <img src="resrc/mcts.png" alt="dti.png"  class="text-center" style="width: 85%; max-width: 1100px">
+        </div>
+        <div class="col-sm-6">
+          <!-- <img src="resrc/.png" alt="deep_tsf.png"  class="text-center" style="width: 90%; max-width: 1100px"> -->
+          <p>The proposed approach combines Monte Carlo Tree Search (MCTS) and Deep Reinforcement Learning (DRL) 
+            to efficiently explore and evaluate possible trajectories. MCTS is used to expand a decision tree 
+            considering robot and human poses, while DRL aids in node evaluation. The algorithm generates 
+            navigational goals while considering obstacle avoidance. It assigns values to nodes based on occlusions 
+            and collisions and uses the Upper Confidence Bound (UCB) to select the best node as the robot's navigational goal. 
+            This process repeats iteratively, resulting in the robot's optimal path for the next three seconds.</p>
+            <p>We used DDQN to train, in an obstacle-free environment, 
+              to obtain a Q function, which takes as input the
+              observation and actions, and produces as output the estimated expected
+              return (discounted sum of reward). During the tree expansion of MCTS, the trained Q function is
+              utilized to estimate the expected reward of each node instead of random sampling. The reward 
+              function is determined by considering the robot's relative distance and orientation:   </p>
+
+              <img src="resrc/r.png" alt="dti.png"  class="text-center" style="width: 80%; max-width: 1100px">              
+        </div>
+      </div>    
+    
+
+
+
+    <h3>Experiments</h3>
+    <hr/>
+      <!-- first experiment -->
+      <div class="container" style="text-align:center; padding:1rem">
+
+        <pre><p><h4><em>MCTS-DRL vs MCTS and DRL</h4></p></pre>
+        <p style="padding-top: 1em; padding-bottom: 2em">
+        The experiment is conducted in two distinct human trajectories: a circular path and an S-
+        shaped path. The results reveal that the DRL approach is
+        unable to effectively follow the human and avoid obstacles,
+        which is attributed to the training of the model in an
+        obstacle-free environment. Also, the MCTS approach fails to generate
+        consistent results, particularly around corners which is due
+        to its random action selection. In contrast, the proposed
+        MCTS-DRL method demonstrates a superior performance,
+        generating a trajectory for the robot that effectively maintains
+        a specified distance from the human, avoids occlusion and
+        collisions with obstacles, and results in a consistent and
+        stable behavior.</p>
+         
+        <img src="resrc/exp1.png" alt="teaser.png" class="text-center" style="width: 65%; max-width: 20000px">
+        <p><h5><em>Performance comparison of DRL, MCTS, MCTS-DRL for two different human trajectories. The human and robot
+          trajectories are depicted by a line and points, respectively. The rainbow color scale indicates the time dimension, with purple
+          and red denoting the first and last time-steps, respectively. The MCTS-DRL method outperforms the standalone MCTS and
+          DRL algorithms, effectively following in front of the human, avoiding obstacles, and producing a consistent and stable
+          behavior.</h5></p>    
+      </div>
+
+
+      <!-- second experiment -->
+      <div class="container" style="text-align:center; padding:1rem">
+        <pre><p><h4>Follow-ahead in an obstacle-free environment</u></h4></p></pre> 
+        <p style="padding-top: 1em; padding-bottom: 2em">
+          We conducted a comparison between the performance
+          of human following in an obstacle-free environment using
+          the proposed MCTS-DRL method and the LBGP method
+          proposed in [1]. The outcomes of the experiments, in
+          terms of the mean human-robot relative distance and mean
+          orientation angle (α), are presented in the following table. The results demonstrated that the robot successfully main-
+          tained the human-robot relative distance within the range
+          of [1, 2] m for all trajectories, and attempted to follow the
+          human in front. This experiment demonstrates the efficacy of
+          the proposed MCTS-DRL approach in achieving comparable
+          results to previous methods in obstacle-free environments.</p>
+        <p>[1] P. Nikdel, R. Vaughan, and M. Chen, “Lbgp: Learning based goal
+        planning for autonomous following in front,” in 2021 IEEE Interna-
+        tional Conference on Robotics and Automation (ICRA). IEEE, 2021,
+        pp. 3140–3146.</p>
+
+
+        <p><h5 style="padding-top:2em "><em>Follow-ahead comparative results for three human trajectories in an obstacle free environment. The proximity of
+          the distance to 1.5 and the orientation to 0 indicates better performance.</h5></p> 
+        <img src="resrc/exp2.png" alt="teaser.png" class="text-center" style="width: 85%; max-width: 2000px">
+      </div>
+
+
+      <!-- third experiment -->
+      <div class="row" style="text-align:center; padding:3rem">
+      <pre><p><h4><center><em>Obstacle and occlusion avoidance</center></h4></p></pre>
+      </div>
+      <p style="padding-top: 1em; padding-bottom: 2em"> Since there are no existing follow-ahead methods proposed
+        for environments with obstacles, comparisons with other
+        methods were not possible. Therefore, the following scenarios 
+        were conducted to evaluate the performance of the proposed method in the presence and absence of obstacles within the environment. Our algorithm is capable of following the
+        target person along any random trajectory. </p>
+
+      <img src="resrc/mcts_long.gif" alt="teaser.png" class="text-center" style="width: 100%; max-width: 2000px">
+
+      <div class="row" style="text-align:center; padding:1rem">
+          <div class="col-sm-6">
+            <img src="resrc/exp3-straight.png" alt="dti.png"  class="text-center" style="width: 100%; max-width: 1100px">
+          </div>
+          <div class="col-sm-6">
+            <img src="resrc/exp3-U.png" alt="deep_tsf.png"  class="text-center" style="width: 90%; max-width: 1100px">
+          </div>
+      </div>
+
+      <div class="row" style="text-align:center; padding:1rem">
+          <div class="col-sm-6">
+            <p><h5><center>Performance evaluation of MCTS-DRL in the absence
+              of obstacles with the human walking in straight line (left
+              figure) and the presence of an obstacle (right figure) in
+              which the robot turned left to avoid occlusion. The robot
+              and human’s trajectories are shown with points and line,
+              respectively. The side bar shows the time starting with the
+              purple and ending with red color, respectively.</center></h5></p>
+          </div>
+          <div class="col-sm-6">
+            <p><h5><center>Performance evaluation of MCTS-DRL in the absence
+              of obstacles with the human walking in a U -shaped path
+              (left figure) and the presence of an obstacle (right figure) in
+              which the robot changed its direction to avoid occlusion. The
+              robot and human’s orientation is shown with the green arrows
+              at the time of direction altering. The robot and human’s
+              trajectories are shown with points and line, respectively. The
+              side bar shows the time starting with the purple and ending
+              with red color, respectively.</center></h5></p>
+          </div>
+      </div>
+
+      <div class="row" style="text-align:center; padding: 1rem">
+          <div class="col-sm-6">
+              <img src="resrc/exp3-S.png" alt="dti.png"  class="text-center" style="width: 100%; max-width: 1100px">
+            </div>
+            <div class="col-sm-6">
+              <img src="resrc/exp3-L.png" alt="deep_tsf.png"  class="text-center" style="width: 60%; max-width: 1100px">
+            </div>
+      </div>
+
+
+      <div class="row" style="text-align:center; padding:1rem">
+            <div class="col-sm-6">
+              <p><h5><center>Performance evaluation of MCTS-DRL in the absence
+                  of obstacles with the human walking in a S-shaped path
+                  (left figure) and the presence of an obstacle (right figure) in
+                  which the robot changed its direction to avoid occlusion. The
+                  robot and human’s orientation is shown with the green arrows
+                  at the time of direction altering. The robot and human’s
+                  trajectories are shown with points and line, respectively. The
+                  side bar shows the time starting with the purple and ending
+                  with red color, respectively.</center></h5></p>
+            </div>
+            <div class="col-sm-6">
+              <p><h5><center>Trajectory of the robot and human navigating an
+                  L shaped path. The trajectory of the human and robot are
+                  shown with line and points, respectively. The green arrows
+                  indicate the orientation of the robot and human when the
+                  human walks toward the corner. The robot avoids colliding
+                  with obstacles and stays beside the human subject, navigating
+                  ahead of them subsequently.</center></h5></p>
+            </div>
+      </div>
+
+
+      <h4 style="padding-top:0.5em">BibTeX</h4>
+      If you find this work useful for your research, please cite:
+      <div class="card">
+        <div class="card-block">
+          <pre class="card-text clickselect">
+            @inproceedings{X,
+            title={An MCTS-DRL Based Obstacle and Occlusion Avoidance Methodology in Robotic Follow-Ahead Applications},
+            author={Leisiazar, Sahar AND Park, Edward AND Lim, Angelica AND Chen, Mo},   
+            booktitle={IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
+            year={2023},
+            }
+          </pre>
+        </div>
+      </div>
+
+</div>      
+
+
+
+
+
+
+
+
+</body>
+</html>
