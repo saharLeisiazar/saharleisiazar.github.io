@@ -130,20 +130,23 @@ The algorithm is structured into three key modules:
         </div>
         <div class="col-sm-6">
 
-          <p>The proposed approach combines Monte Carlo Tree Search (MCTS) and Deep Reinforcement Learning (DRL) 
-            to efficiently explore and evaluate possible trajectories. MCTS is used to expand a decision tree 
-            considering robot and human poses, while DRL aids in node evaluation. The algorithm generates 
-            navigational goals while considering obstacle avoidance. It assigns values to nodes based on occlusions 
-            and collisions and uses the Upper Confidence Bound (UCB) to select the best node as the robot's navigational goal. 
-            This process repeats iteratively, resulting in the robot's optimal path for the next three seconds.</p>
-            <p>We used DDQN to train, in an obstacle-free environment, 
-              to obtain a Q function, which takes as input the
-              observation and actions, and produces as output the estimated expected
-              return (discounted sum of reward). During the tree expansion of MCTS, the trained Q function is
-              utilized to estimate the expected reward of each node instead of random sampling. The reward 
-              function is determined by considering the robot's relative distance and orientation:   </p>
+          <p>In this work, Monte Carlo Tree Search (MCTS) is employed to determine the optimal action for a robot to follow a human from the front. The algorithm involves four key steps: selection, expansion, simulation, and backpropagation. 
+In the selection stage, the process starts at the root node, representing the current poses of the human and the robot. From this point, the algorithm computes the Upper Confidence Bound (UCB) value for each child node and selects the child with the highest value, continuing this selection process until it reaches a leaf node.
+In this work, we modified the standard UCB approach by incorporating the probability of selecting each node. 
+The parameters involved in the UCB equation include the value of each node $(V)$, the number of times a node $(n)$ and its parent $(n_p)$ have been selected, and the probability of selecting a node $(P)$. 
+The value of each node is derived from the state evaluation module (RL model), while the probability is obtained from the human future positioning probabilities module (LSTM). 
+              
 
-              <img src="resrc/r.png" alt="dti.png"  class="text-center" style="width: 80%; max-width: 1100px">              
+              During the expansion stage, all possible next states for each action are simulated. If the selected leaf node is a robot node (blue node), the algorithm uses the human's actions and, if it is a human node (red node), it uses the robot's actions. 
+In the evaluation stage, newly added leaf nodes are first assessed for safety to ensure they do not result in collisions with obstacles or the human. 
+If a leaf node directs the robot toward an unsafe region, the algorithm removes that node from the tree and stops further expansion from that branch. 
+Once safety is confirmed, the leaf nodes are evaluated using the state evaluation module. In this module, all the leaf nodes—both human and robot—are passed through the trained RL model to assign a value to each node. This value reflects how the robot's pose is close to the desired pose in relation to the human. In other words, the closer the robot is to being directly in front of the human at a certain distance, the higher the value assigned to the node.
+Afterward, the human-related nodes are processed through the human future positioning probabilities module. This module assigns a probability to each human node based on the history of the human's positions over the past 3 seconds. It's important to note that all the robot nodes are assigned an equal probability of  1/6, where 6 represents the number of actions for the robot.
+Finally, In the backpropagation stage, the value obtained for each leaf node is propagated back through the tree, updating the values of all parent nodes up to the root node.
+
+
+At the end of expansion, which occurs over a $0.2$s interval, the immediate child node with the highest visit count $(n)$ is selected as the optimal action for the next time step. The algorithm then updates with the new poses of the human and robot and re-expands the tree for the subsequent time step.
+<!--               <img src="resrc/r.png" alt="dti.png"  class="text-center" style="width: 80%; max-width: 1100px">               -->
         </div>
       </div>    
     
