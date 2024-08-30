@@ -114,12 +114,22 @@ By incorporating the likelihood of each possible human action and using the RL m
 
     <h3>Approach</h3>
     <hr/>
+    
+    <p>In this paper, we present an algorithm designed for a mobile robot to follow a human while accounting for the dynamic nature of human movement, rather than assuming that the human has a fixed goal point. Given that humans frequently change direction, the algorithm considers a range of possible future actions for both the robot and the human.
+The robot is designed to evaluate the most promising and probable moves and future positions of both the human and itself a few time steps ahead, ultimately selecting the optimal action for the current time step.
+
+The algorithm is structured into three key modules: 
+    (i) Decision tree: A module that takes the poses of both the human and the robot as inputs. It expands the tree by considering various potential actions for both the robot and the human, ultimately generating the optimal action for the robot.
+    (ii) State evaluation: A module that assigns a value to each node during tree expansion. Nodes with higher values indicate that the robot and human are in a more desirable relative position.
+    (iii) Human future positioning probabilities: This module estimates the likelihood of different future human positions for each human node during tree expansion. This helps the algorithm to better anticipate and adapt to realistic human behavior in real-world scenarios.
+</p>
+    
       <div class="row" style="text-align:center; padding:1rem">
         <div class="col-sm-6">
-          <img src="resrc/mcts.png" alt="dti.png"  class="text-center" style="width: 85%; max-width: 1100px">
+          <img src="resrc/algorithm.png" alt="dti.png"  class="text-center" style="width: 85%; max-width: 1100px">
         </div>
         <div class="col-sm-6">
-          <!-- <img src="resrc/.png" alt="deep_tsf.png"  class="text-center" style="width: 90%; max-width: 1100px"> -->
+
           <p>The proposed approach combines Monte Carlo Tree Search (MCTS) and Deep Reinforcement Learning (DRL) 
             to efficiently explore and evaluate possible trajectories. MCTS is used to expand a decision tree 
             considering robot and human poses, while DRL aids in node evaluation. The algorithm generates 
