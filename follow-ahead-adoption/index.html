@@ -158,21 +158,43 @@ At the end of expansion, which occurs over a $0.2$s interval, the immediate chil
       <!-- first experiment -->
       <div class="container" style="text-align:center; padding:1rem">
 
-        <pre><p><h4><em>MCTS-DRL vs MCTS and DRL</h4></p></pre>
+        <pre><p><h4><em>Sudden changes in human trajectory</h4></p></pre>
         <p style="padding-top: 1em; padding-bottom: 2em">
-        The experiment is conducted in two distinct human trajectories: a circular path and an S-
-        shaped path. The results reveal that the DRL approach is
-        unable to effectively follow the human and avoid obstacles,
-        which is attributed to the training of the model in an
-        obstacle-free environment. Also, the MCTS approach fails to generate
-        consistent results, particularly around corners which is due
-        to its random action selection. In contrast, the proposed
-        MCTS-DRL method demonstrates a superior performance,
-        generating a trajectory for the robot that effectively maintains
-        a specified distance from the human, avoids occlusion and
-        collisions with obstacles, and results in a consistent and
-        stable behavior.</p>
-         
+        The purpose of this experiment is to simulate scenarios where a human suddenly changes direction, a common occurrence in real-world situations.</p>
+
+
+    <div class="row" style="text-align:center; padding: 1rem">
+          <div class="col-sm-6">
+              <img src="resrc/exp_sudden_1.png" alt="dti.png"  class="text-center" style="width: 100%; max-width: 1100px">
+            </div>
+            <div class="col-sm-6">
+              <img src="resrc/exp_sudden_2.png" alt="deep_tsf.png"  class="text-center" style="width: 60%; max-width: 1100px">
+            </div>
+    </div>
+
+      <div class="row" style="text-align:center; padding:1rem">
+            <div class="col-sm-6">
+              <p><h5><center>Comparison of robot trajectories between the proposed algorithm and the previous method. (i) The left image shows the human and robot trajectories using the proposed algorithm, achieving $0.17$ rad mean angle, (ii) the right image displays the trajectories using the previous method, achieving $0.71$ rad mean angle. The rainbow color scale indicates the time dimension, with red and purple denoting the first and last time steps, respectively.</center></h5></p>
+            </div>
+            <div class="col-sm-6">
+              <p><h5><center>Comparison of robot trajectories between the proposed algorithm and the previous method. (i) The left image shows the human and robot trajectories using the proposed algorithm, achieving $0.37$ rad mean angle, (ii) the right image displays the trajectories using the previous method, achieving $0.48$ rad mean angle. The rainbow color scale indicates the time dimension, with red and purple denoting the first and last time steps, respectively.</center></h5></p>
+            </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
         <img src="resrc/exp1.png" alt="teaser.png" class="text-center" style="width: 65%; max-width: 20000px">
         <p><h5><em>Performance comparison of DRL, MCTS, MCTS-DRL for two different human trajectories. The human and robot
           trajectories are depicted by a line and points, respectively. The rainbow color scale indicates the time dimension, with purple
