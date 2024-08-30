@@ -106,16 +106,8 @@
     <h3>Abstract</h3>
     <hr/>
     <p>
-        We propose a novel methodology for robotic follow-ahead applications that address the critical challenge of obstacle and occlusion avoidance. Our approach effectively navigates the robot while ensuring avoidance of collisions
-        and occlusions caused by surrounding objects. To achieve
-        this, we developed a high-level decision-making algorithm
-        that generates short-term navigational goals for the mobile
-        robot. Monte Carlo Tree Search is integrated with a Deep
-        Reinforcement Learning method to enhance the performance
-        of the decision-making process and generate more reliable
-        navigational goals. Through extensive experimentation and
-        analysis, we demonstrate the effectiveness and superiority of
-        our proposed approach in comparison to the existing follow-ahead human-following robotic methods.
+        This paper addresses the challenge of robot follow ahead applications where the human behavior is highly variable. We propose a novel approach that does not rely on single human trajectory prediction but instead considers multiple potential future positions of the human, along with their associated probabilities, in the robot’s decision-making process. We trained an LSTM-based model to generate a probability distribution over the human’s future actions. These probabilities, along with different potential actions and future positions, are integrated into the tree expansion of Monte Carlo Tree Search (MCTS). Additionally, a trained Reinforcement Learning (RL) model is used to evaluate the nodes within the tree. 
+By incorporating the likelihood of each possible human action and using the RL model to assess the value of the different trajectories, our approach enables the robot to effectively balance between focusing on the most probable future trajectory and considering all potential trajectories. This methodology enhances the robot's ability to adapt to frequent and unpredictable changes in human direction, improving its navigation and ability to navigate in front of the person.
     </p>
 
 
