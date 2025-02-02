@@ -159,6 +159,7 @@ At the end of expansion, which occurs over a $0.2$s interval, the immediate chil
 
 
     <h3>Experiments</h3>
+    <div class="container" style="text-align:center; padding:1rem">
 
    <p> The algorithm requires two inputs: (i) an occupancy map of the environment, indicating the position of surrounding obstacles, and (ii) the position and orientation of both the human and the robot, which are obtained from a camera and odometry published from the robot. 
 The camera is mounted on top of the robot and attached to a motor. Additionally, a PID controller is implemented to rotate the camera during the experiments, ensuring a clear view of the human and accurately capturing the human's pose.
@@ -167,7 +168,7 @@ For the real-world experiments, we used the RB1 base robot, a ZED2 camera, and a
 
     <hr/>
       <!-- first experiment -->
-      <div class="container" style="text-align:center; padding:1rem">
+     
 
         <pre><p><h4><em>Sudden changes in human trajectory</h4></p></pre>
 
@@ -211,9 +212,14 @@ As depicted, the robot effectively adjusts to the human's new trajectories and c
 
     
       <!-- second experiment -->
+    <pre><p><h4><em>Obstacles Avoidance</h4></p></pre>
 
+    <p>In this section, we conducted an experiment to evaluate the robot's obstacle avoidance performance. The figure illustrates two distinct scenarios. In the left image, a box is placed in the environment, and the human walks toward it. When the robot reaches the box before the human, moving straight is no longer an option, so the robot explores turning left or right. Given that the human's direction is slightly to the right, the robot chooses to turn right. By the time the human reaches the box, the robot is already positioned on the right side of it.
+        
+In the right image, the human walks toward the obstacle and stops in front of it, while the robot turns right to avoid a collision and then turns left to reposition itself in front of the human. Similar to the previous experiments, the human's trajectory is depicted with a line, while the robot's path is shown with squares, both in rainbow-colored.
+    </p>
 
-
+<!-- <img src="resrc/modules.png" alt="dti.png"  class="text-center" style="width: 65%; max-width: 1100px"> -->
 
 
 
