@@ -1,0 +1,254 @@
+<html lang="en">
+<head>
+    <title>Follow-ahead-adoption</title>
+    <meta name="description" content="Project page for Adapting to Frequent Human Direction Changes in Autonomous Frontal Following Robots.">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>    
+</head>
+<body>
+
+
+<!--Title-->    
+<div class="container" style="text-align:center; padding:2rem 15px">
+    <div class="row" style="text-align:center">
+        <h1>Adapting to Frequent Human Direction Changes in Autonomous Frontal Following Robots</h1>
+        <h4>IEEE Robotics and Automation Letters 2025</h4>
+    </div>
+    <div class="row" style="text-align:center">
+        <div class="col-xs-0 col-md-3"></div>
+        <div class="col-xs-12 col-md-6">
+        <h4>
+    
+            <!-- How to write authors and how to do we need links?-->
+            <nobr>Sahar Leisiazar</nobr><sup></sup> &emsp;
+            <nobr>Seyed Roozbeh Razavi Rohani</nobr><sup></sup> &emsp;
+            <nobr>Edward J. Park</nobr><sup></sup> &emsp;
+            <nobr>Angelica Lim</nobr><sup></sup> </a>&emsp;
+            <nobr>Mo Chen</nobr><sup></sup></a>&emsp;
+
+        </h4>
+
+
+        <p><em><center>School of Mechatronics System Engineering, Simon Fraser University, Surrey, BC, Canada  &emsp;</center></em></p>
+        <p><em><center>School of Computing Science, Simon Fraser University, Burnaby, BC, Canada  &emsp;</center></em></p>
+        </div>
+        <div class="hidden-xs hidden-sm col-md-1" style="text-align:left; margin-left:0px; margin-right:0px">
+        <a href="" style="color:inherit">
+            <i class="fa fa-file-pdf-o fa-4x"></i></a> 
+        </div>
+        <!-- <div class="hidden-xs hidden-sm col-md-2" style="text-align:left; margin-left:0px;">
+        <a href="https://github.com/monniert/dti-clustering" style="color:inherit">
+            <i class="fa fa-github fa-4x"></i></a>
+        </div> -->
+    </div>
+</div>
+
+
+
+
+
+<!--Links-->
+<div class="container" style="text-align:center; padding:1rem">
+    <h3 style="text-align:center; padding-top:1rem; padding-bottom: 2em">
+<!--       <!--<a class="label label-info" href="resrc/paper.pdf">Paper</a> -->
+<!--       <a class="label label-info" href="resrc/annotate_no_gpt.csv">Annotations</a> -->
+<!--       <a class="label label-info" href="resrc/annotate_gpt.csv">Annotations  w/Results</a> -->
+<!--       <a class="label label-info" href="https://dev9032.d1ab6be83l9u2m.amplifyapp.com/">Annotation Website</a> -->
+<!--       <a class="label label-info" href="resrc/ref.bib">BibTeX</a> --> 
+      <a class="label label-info" href="resrc/paper.pdf">Paper</a>
+      <a class="label label-info" href="https://github.com/saharLeisiazar/Follow_ahead_reaction">Code</a>
+      <a class="label label-info" href="https://youtu.be/hzJZIZihSKI">Video</a>
+<!--       <a class="label label-info" href="resrc/IROS2023-MCTS-DRL.pdf">Presentation</a>
+      <a class="label label-info" href="resrc/IROS2023_Poster.pdf">Poster</a> -->
+    </h3>
+
+    <div class="row" style="text-align:center; padding: 1rem">
+          <div class="col-sm-6">
+              <img src="resrc/first.drawio.png" alt="dti.png"  class="text-center" style="width: 100%; max-width: 1100px">
+            </div>
+            <div class="col-sm-6">
+              <img src="resrc/tree_expansion.drawio.png" alt="deep_tsf.png"  class="text-center" style="width: 60%; max-width: 1100px">
+            </div>
+    </div>
+
+      <div class="row" style="text-align:center; padding:1rem">
+            <div class="col-sm-6">
+              <p><h5><center>Real-world experiment showcasing the robot's ability to follow a human from the front while avoiding obstacles. The figure illustrates an example of the tree expansion process, with blue and red arrows representing the potential moves for the robot and human, respectively. The robot expands the tree and selects nodes that allow it to maintain a position in front of the human, while eliminating branches that could lead to collisions with obstacles.</center></h5></p>
+            </div>
+            <div class="col-sm-6">
+              <p><h5><center>Tree expansion in MCTS: Blue nodes represent possible future positions of the robot, while red nodes indicate potential future positions of the human. The letters "L", "R", "S", and "F" on the edges of the tree represent the actions: Left, Right, Straight, and Fast, respectively.</center></h5></p>
+            </div>
+      </div>
+
+    
+<!--     <img src="resrc/first.drawio.png" alt="teaser.png" class="text-center" style="width: 100%; max-width: 2000px"> -->
+<!--     <p><h5><em>llustration of the MCTS-DRL framework utilizing
+        human future estimation for goal generation. The search
+        tree is expanded to identify the best goal point to follow
+        ahead of the person, while avoiding occlusion and collision.
+        The resulting goal point is indicated by a green star, while
+        red and blue arrows represent paths leading to collision and
+        occlusion, respectively. The MCTS algorithm expands a tree
+        to find the best navigational goal for the robot in order to
+        follow-ahead of the target person and avoid collision and
+        occlusion caused by surrounding objects.</h5></p>    
+</div> -->
+
+
+
+<div class="container">
+    <h3>Abstract</h3>
+    <hr/>
+    <p>
+        This paper addresses the challenge of robot follow ahead applications where the human behavior is highly variable. We propose a novel approach that does not rely on single human trajectory prediction but instead considers multiple potential future positions of the human, along with their associated probabilities, in the robot’s decision-making process. We trained an LSTM-based model to generate a probability distribution over the human’s future actions. These probabilities, along with different potential actions and future positions, are integrated into the tree expansion of Monte Carlo Tree Search (MCTS). Additionally, a trained Reinforcement Learning (RL) model is used to evaluate the nodes within the tree. 
+By incorporating the likelihood of each possible human action and using the RL model to assess the value of the different trajectories, our approach enables the robot to effectively balance between focusing on the most probable future trajectory and considering all potential trajectories. This methodology enhances the robot's ability to adapt to frequent and unpredictable changes in human direction, improving its navigation and ability to navigate in front of the person.
+    </p>
+
+
+
+    <h3>Approach</h3>
+    <hr/>
+    
+    <p>In this paper, we present an algorithm designed for a mobile robot to follow a human while accounting for the dynamic nature of human movement, rather than assuming that the human has a fixed goal point. Given that humans frequently change direction, the algorithm considers a range of possible future actions for both the robot and the human.
+The robot is designed to evaluate the most promising and probable moves and future positions of both the human and itself a few time steps ahead, ultimately selecting the optimal action for the current time step.
+
+The algorithm is structured into three key modules: 
+    (i) Decision tree: A module that takes the poses of both the human and the robot as inputs. It expands the tree by considering various potential actions for both the robot and the human, ultimately generating the optimal action for the robot.
+    (ii) State evaluation: A module that assigns a value to each node during tree expansion. Nodes with higher values indicate that the robot and human are in a more desirable relative position.
+    (iii) Human future positioning probabilities: This module estimates the likelihood of different future human positions for each human node during tree expansion. This helps the algorithm to better anticipate and adapt to realistic human behavior in real-world scenarios.
+</p>
+
+
+<img src="resrc/modules.png" alt="dti.png"  class="text-center" style="width: 65%; max-width: 1100px">
+
+
+    
+      <div class="row" style="text-align:center; padding:1rem">
+        <div class="col-sm-6">
+          <img src="resrc/algorithm.png" alt="dti.png"  class="text-center" style="width: 85%; max-width: 1100px">
+        </div>
+        <div class="col-sm-6">
+
+          <p>In this work, Monte Carlo Tree Search (MCTS) is employed to determine the optimal action for a robot to follow a human from the front. The algorithm involves four key steps: selection, expansion, simulation, and backpropagation. 
+In the selection stage, the process starts at the root node, representing the current poses of the human and the robot. From this point, the algorithm computes the Upper Confidence Bound (UCB) value for each child node and selects the child with the highest value, continuing this selection process until it reaches a leaf node.
+In this work, we modified the standard UCB approach by incorporating the probability of selecting each node. 
+The parameters involved in the UCB equation include the value of each node $(V)$, the number of times a node $(n)$ and its parent $(n_p)$ have been selected, and the probability of selecting a node $(P)$. 
+The value of each node is derived from the state evaluation module (RL model), while the probability is obtained from the human future positioning probabilities module (LSTM). 
+              
+
+              During the expansion stage, all possible next states for each action are simulated. If the selected leaf node is a robot node (blue node), the algorithm uses the human's actions and, if it is a human node (red node), it uses the robot's actions. 
+In the evaluation stage, newly added leaf nodes are first assessed for safety to ensure they do not result in collisions with obstacles or the human. 
+If a leaf node directs the robot toward an unsafe region, the algorithm removes that node from the tree and stops further expansion from that branch. 
+Once safety is confirmed, the leaf nodes are evaluated using the state evaluation module. In this module, all the leaf nodes—both human and robot—are passed through the trained RL model to assign a value to each node. This value reflects how the robot's pose is close to the desired pose in relation to the human. In other words, the closer the robot is to being directly in front of the human at a certain distance, the higher the value assigned to the node.
+Afterward, the human-related nodes are processed through the human future positioning probabilities module. This module assigns a probability to each human node based on the history of the human's positions over the past 3 seconds. It's important to note that all the robot nodes are assigned an equal probability of  1/6, where 6 represents the number of actions for the robot.
+Finally, In the backpropagation stage, the value obtained for each leaf node is propagated back through the tree, updating the values of all parent nodes up to the root node.
+
+
+At the end of expansion, which occurs over a $0.2$s interval, the immediate child node with the highest visit count $(n)$ is selected as the optimal action for the next time step. The algorithm then updates with the new poses of the human and robot and re-expands the tree for the subsequent time step.
+<!--               <img src="resrc/r.png" alt="dti.png"  class="text-center" style="width: 80%; max-width: 1100px">               -->
+        </div>
+      </div>    
+    
+
+<p style="padding-top: 1em; padding-bottom: 2em">
+
+    <h3>Experiments</h3>
+    <div class="container" style="text-align:center; padding:1rem">
+
+   <p> The algorithm requires two inputs: (i) an occupancy map of the environment, indicating the position of surrounding obstacles, and (ii) the position and orientation of both the human and the robot, which are obtained from a camera and odometry published from the robot. 
+The camera is mounted on top of the robot and attached to a motor. Additionally, a PID controller is implemented to rotate the camera during the experiments, ensuring a clear view of the human and accurately capturing the human's pose.
+The ZED 2 camera captured human pose data at a frequency of 5 Hz for smooth and reliable input for the algorithm.
+For the real-world experiments, we used the RB1 base robot, a ZED2 camera, and a Dynamixel servo motor. </p>
+
+    <hr/>
+      <!-- first experiment -->
+     
+
+        <pre><p><h4><em>Sudden changes in human trajectory</h4></p></pre>
+
+        <p> The purpose of this experiment is to simulate scenarios where a human suddenly changes direction, a common occurrence in real-world situations.
+The figures illustrate the trajectories of the human and the robot during two different experiments conducted with the RB1 base robot. In both experiments, the human changes their trajectory twice within a time frame of about 10 to 14 minutes.
+The left image in both figures illustrates the human and robot trajectories using the proposed algorithm, while the right image shows the trajectories using the previous approach. The rainbow color scale indicates the time dimension, with red and purple denoting the first and last time steps, respectively. 
+As depicted, the robot effectively adjusts to the human's new trajectories and consistently follows from the front. 
+
+        </p>
+          
+        <p style="padding-top: 1em; padding-bottom: 2em">
+
+
+    <div class="row" style="text-align:center; padding: 1rem">
+          <div class="col-sm-6">
+              <img src="resrc/exp_sudden_1.png" alt="dti.png"  class="text-center" style="width: 100%; max-width: 1100px">
+            </div>
+            <div class="col-sm-6">
+              <img src="resrc/exp_sudden_2.png" alt="deep_tsf.png"  class="text-center" style="width: 100%; max-width: 1100px">
+            </div>
+    </div>
+
+      <div class="row" style="text-align:center; padding:1rem">
+            <div class="col-sm-6">
+              <p><h5><center>Comparison of robot trajectories between the proposed algorithm and the previous method. (i) The left image shows the human and robot trajectories using the proposed algorithm, achieving $0.17$ rad mean angle, (ii) the right image displays the trajectories using the previous method, achieving $0.71$ rad mean angle. The rainbow color scale indicates the time dimension, with red and purple denoting the first and last time steps, respectively.</center></h5></p>
+            </div>
+            <div class="col-sm-6">
+              <p><h5><center>Comparison of robot trajectories between the proposed algorithm and the previous method. (i) The left image shows the human and robot trajectories using the proposed algorithm, achieving $0.37$ rad mean angle, (ii) the right image displays the trajectories using the previous method, achieving $0.48$ rad mean angle. The rainbow color scale indicates the time dimension, with red and purple denoting the first and last time steps, respectively.</center></h5></p>
+            </div>
+      </div>
+  
+      </div>
+
+
+
+
+
+
+
+
+    
+      <!-- second experiment -->
+    <pre><p><h4><em>Obstacles Avoidance</h4></p></pre>
+
+    <p>In this section, we conducted an experiment to evaluate the robot's obstacle avoidance performance. The figure illustrates two distinct scenarios. In the left image, a box is placed in the environment, and the human walks toward it. When the robot reaches the box before the human, moving straight is no longer an option, so the robot explores turning left or right. Given that the human's direction is slightly to the right, the robot chooses to turn right. By the time the human reaches the box, the robot is already positioned on the right side of it.
+        
+In the right image, the human walks toward the obstacle and stops in front of it, while the robot turns right to avoid a collision and then turns left to reposition itself in front of the human. Similar to the previous experiments, the human's trajectory is depicted with a line, while the robot's path is shown with squares, both in rainbow-colored.
+    </p>
+
+<img src="resrc/box_obstacle.png" alt="dti.png"  class="text-center" style="width: 55%; max-width: 1100px">
+
+
+  
+  
+
+
+    <p style="padding-top: 1em; padding-bottom: 2em">
+
+      <h4 style="padding-top:0.5em">BibTeX</h4>
+      If you find this work useful for your research, please cite:
+      <div class="card">
+        <div class="card-block">
+          <pre class="card-text clickselect">
+            @inproceedings{X,
+            title={Adapting to Frequent Human Direction Changes in Autonomous Frontal Following Robots},
+            author={Leisiazar, Sahar AND Rohani, Roozbeh  AND Park, Edward AND Lim, Angelica AND Chen, Mo},   
+            booktitle={IEEE Robotics and Automation Letters},
+            year={2025},
+            }
+          </pre>
+        </div>
+      </div>
+
+</div>      
+
+
+
+
+
+
+
+</body>
+</html>
