@@ -102,10 +102,22 @@
     <h3>Approach</h3>
     <hr/>
 
-    <img src="res/model.png" alt="dti.png"  class="text-center" style="width: 65%; max-width: 1100px">
+    <img src="res/model.png" alt="dti.png"  class="text-center" style="width: 90%; max-width: 1100px">
       <div class="row" style="text-align:center; padding:1rem">
           
-      <p><h5>Tree expansion </h5></p>
+      <p><h5> We propose a learning-based approach for
+local map generation and train a model that takes three
+inputs: an RGB image, a depth image, and the camera’s
+pitch angle. Mounted on the exoskeleton’s leg, the camera
+undergoes 3D rotational motion during walking, including
+roll, pitch, and yaw along the X, Y, and Z axes. Among these, the pitch angle has the most
+significant impact on mapping accuracy, as it directly effects
+how obstacles are perceived and projected in the BEV map.
+To address this, our model jointly encodes features from
+all three inputs and learns to predict the occupancy map
+representing the free and occupied areas in front of the robot.
+This design enables the system to account for camera motion
+and produce accurate and real-time map. </h5></p>
 
     
 
