@@ -47,9 +47,6 @@
 </div>
 
 
-
-
-
 <!--Links-->
 <div class="container" style="text-align:center; padding:1rem">
     <h3 style="text-align:center; padding-top:1rem; padding-bottom: 2em">
@@ -58,27 +55,6 @@
       <a class="label label-info" href="https://youtu.be/hzJZIZihSKI">Video</a>
 
     </h3>
-
-<!--     <div class="row" style="text-align:center; padding: 1rem">
-          <div class="col-sm-6">
-              <img src="resrc/first.drawio.png" alt="dti.png"  class="text-center" style="width: 100%; max-width: 1100px">
-            </div>
-            <div class="col-sm-6">
-              <img src="resrc/tree_expansion.drawio.png" alt="deep_tsf.png"  class="text-center" style="width: 60%; max-width: 1100px">
-            </div>
-    </div>
-
-      <div class="row" style="text-align:center; padding:1rem">
-            <div class="col-sm-6">
-              <p><h5><center>Real-world experiment showcasing the robot's ability to follow a human from the front while avoiding obstacles. The figure illustrates an example of the tree expansion process, with blue and red arrows representing the potential moves for the robot and human, respectively. The robot expands the tree and selects nodes that allow it to maintain a position in front of the human, while eliminating branches that could lead to collisions with obstacles.</center></h5></p>
-            </div>
-            <div class="col-sm-6">
-              <p><h5><center>Tree expansion in MCTS: Blue nodes represent possible future positions of the robot, while red nodes indicate potential future positions of the human. The letters "L", "R", "S", and "F" on the edges of the tree represent the actions: Left, Right, Straight, and Fast, respectively.</center></h5></p>
-            </div>
-      </div> -->
-
-    
-
 
 
 <div class="container">
@@ -104,13 +80,14 @@
       </div> 
 
     <h1>Contributions</h1>
-    <ul>
+    <hr/>
+    <ul style="text-align: left;">
       <li> We present, to the best of our knowledge, the first mapping module implemented on a lower-limb, self-balancing exoskeleton, capable of generating a real-time, robot-centric BEV occupancy map to support local and safe navigation</li>
       <li>The proposed method explicitly incorporates the camera’s motion, particularly the pitch angle, alongside RGB-D data to improve mapping accuracy in the presence of leg-mounted camera dynamics</li>
       <li>In contrast to conventional SLAM algorithms, the model operates in real-time, enabling dynamic objects mapping such as walking humansm</li>
       <li> We propose a semi-supervised training framework that combines supervised learning on simulation data with unsupervised learning on real-world observations, enabling the model to achieve accurate and robust occupancy map generation</li>  
     </ul>
-    <hr/>    
+        
 
 
     <h1>Approach</h1>
@@ -124,6 +101,9 @@
           significant impact on mapping accuracy, as it directly effects how obstacles are perceived and projected in the BEV map. To address this, our model jointly encodes features from 
           all three inputs and learns to predict the occupancy map representing the free and occupied areas in front of the robot. This design enables the system to account for camera motion 
           and produce accurate and real-time map. 
+
+
+          The proposed model generates a top-down binary occupancy map using a three-part architecture: an RGB-depth feature extractor, a pitch-aware conditioning module, and a convolutional decoder. The feature extractor employs two parallel ResNet-50 encoders—one for RGB images with pretrained weights and one for normalized depth images trained from scratch—producing fused feature maps. The pitch-aware module, PitchFiLM, encodes the leg-mounted camera’s pitch angle using sine and cosine components, generating channel-wise scaling and bias parameters to modulate the fused features. The convolutional decoder progressively upsamples these conditioned features through five convolutional blocks with bilinear upsampling and dropout, ultimately producing a 224×224 occupancy map via a sigmoid activation. The output represents a robot-centric, real-world-scaled map indicating obstacle presence for short-horizon navigation and real-time obstacle avoidance in dynamic environments for lower-limb exoskeletons.
       </p>
     </div>
   </div>     
