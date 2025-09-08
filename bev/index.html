@@ -103,7 +103,15 @@
           and produce accurate and real-time map. 
 
 
-          The proposed model generates a top-down binary occupancy map using a three-part architecture: an RGB-depth feature extractor, a pitch-aware conditioning module, and a convolutional decoder. The feature extractor employs two parallel ResNet-50 encoders—one for RGB images with pretrained weights and one for normalized depth images trained from scratch—producing fused feature maps. The pitch-aware module, PitchFiLM, encodes the leg-mounted camera’s pitch angle using sine and cosine components, generating channel-wise scaling and bias parameters to modulate the fused features. The convolutional decoder progressively upsamples these conditioned features through five convolutional blocks with bilinear upsampling and dropout, ultimately producing a 224×224 occupancy map via a sigmoid activation. The output represents a robot-centric, real-world-scaled map indicating obstacle presence for short-horizon navigation and real-time obstacle avoidance in dynamic environments for lower-limb exoskeletons.
+          The proposed model generates BEV maps using a three-module architecture: 
+          <ul style="text-align: left;">
+              <li> An RGB-depth feature extractor: employs two parallel ResNet-50 encoders—one for RGB images and one for depth images —producing fused feature maps.</li>
+              <li> A pitch-aware conditioning module (PitchFiLM): encodes the leg-mounted camera’s pitch angle using sine and cosine components, generating channel-wise scaling and bias parameters to modulate the fused features. </li>
+              <li> A convolutional decoder: progressively upsamples these conditioned features through five convolutional blocks with bilinear upsampling and dropout, ultimately producing an occupancy map via a sigmoid activation. </li>
+          </ul>
+
+          The output represents a robot-centric, real-world-scaled map indicating obstacle presence for short-horizon navigation and real-time obstacle avoidance in dynamic environments for lower-limb exoskeletons.
+          
       </p>
     </div>
   </div>     
