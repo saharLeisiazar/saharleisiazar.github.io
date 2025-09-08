@@ -88,10 +88,17 @@
               <img src="res/exo.png" alt="dti.png"  class="text-center" style="width: 65%; max-width: 1100px">
             </div>
             <div class="col-sm-6">
-                <h3>Abstract</h3>
+                <h1>Abstract</h1>
                 <hr/>
                 <p>
-                    We present a novel mapping approach for lower-limb exoskeletons that generates real-time, robot-centric bird’s-eye view (BEV) occupancy maps to support safe and efficient local navigation. This work focuses on a self-balancing wearable humanoid exoskeleton, where BEV mapping is essential for enabling autonomous balance control, footstep planning, and adaptive navigation in complex, real-world environments. The proposed method explicitly incorporates camera motion alongside RGB-D observations to improve mapping accuracy under the dynamic conditions introduced by leg-mounted sensors. To meet the computational constraints of embedded platforms, the model is optimized for real-time operation and can effectively track dynamic elements such as moving pedestrians. We further introduce a semi-supervised framework that combines simulation-based supervised training with unsupervised learning on real-world data, enabling robust generalization despite limited ground-truth labels. Experiments in both simulated and real environments confirm that the model remains robust to the exoskeleton’s motion as well as various sources of environmental noise. 
+                    We present a novel mapping approach for lower-limb exoskeletons that generates real-time, robot-centric bird’s-eye view (BEV) occupancy maps to support safe and efficient 
+                    local navigation. This work focuses on a self-balancing wearable humanoid exoskeleton, where BEV mapping is essential for enabling autonomous balance control, footstep 
+                    planning, and adaptive navigation in complex, real-world environments. The proposed method explicitly incorporates camera motion alongside RGB-D observations to improve 
+                    mapping accuracy under the dynamic conditions introduced by leg-mounted sensors. To meet the computational constraints of embedded platforms, the model is optimized for 
+                    real-time operation and can effectively track dynamic elements such as moving pedestrians. We further introduce a semi-supervised framework that combines simulation-based 
+                    supervised training with unsupervised learning on real-world data, enabling robust generalization despite limited ground-truth labels. Experiments in both simulated and 
+                    real environments confirm that the model achieves fast inference (17 ms) with low memory consumption (600 M B). Moreover, the model remains robust to the exoskeleton’s 
+                    motion as well as various sources of environmental noise.
                 </p>
             </div>
       </div> 
@@ -105,60 +112,19 @@
     <img src="res/model.png" alt="dti.png"  class="text-center" style="width: 90%; max-width: 1100px">
       <div class="row" style="text-align:center; padding:1rem">
           
-      <p><h5> We propose a learning-based approach for
-local map generation and train a model that takes three
-inputs: an RGB image, a depth image, and the camera’s
-pitch angle. Mounted on the exoskeleton’s leg, the camera
-undergoes 3D rotational motion during walking, including
-roll, pitch, and yaw along the X, Y, and Z axes. Among these, the pitch angle has the most
-significant impact on mapping accuracy, as it directly effects
-how obstacles are perceived and projected in the BEV map.
-To address this, our model jointly encodes features from
-all three inputs and learns to predict the occupancy map
-representing the free and occupied areas in front of the robot.
-This design enables the system to account for camera motion
-and produce accurate and real-time map. </h5></p>
-
-    
-
-
-
-
-
-<!-- <img src="resrc/modules.png" alt="dti.png"  class="text-center" style="width: 65%; max-width: 1100px"> -->
-
-
-    
-<!--       <div class="row" style="text-align:center; padding:1rem">
-        <div class="col-sm-6">
-          <img src="resrc/algorithm.png" alt="dti.png"  class="text-center" style="width: 85%; max-width: 1100px">
-        </div>
-        <div class="col-sm-6">
-
-          <p>In this work, Monte Carlo Tree Search (MCTS) is employed to determine the optimal action for a robot to follow a human from the front. The algorithm involves four key steps: selection, expansion, simulation, and backpropagation. 
-In the selection stage, the process starts at the root node, representing the current poses of the human and the robot. From this point, the algorithm computes the Upper Confidence Bound (UCB) value for each child node and selects the child with the highest value, continuing this selection process until it reaches a leaf node.
-In this work, we modified the standard UCB approach by incorporating the probability of selecting each node. 
-The parameters involved in the UCB equation include the value of each node $(V)$, the number of times a node $(n)$ and its parent $(n_p)$ have been selected, and the probability of selecting a node $(P)$. 
-The value of each node is derived from the state evaluation module (RL model), while the probability is obtained from the human future positioning probabilities module (LSTM). 
-              
-
-              During the expansion stage, all possible next states for each action are simulated. If the selected leaf node is a robot node (blue node), the algorithm uses the human's actions and, if it is a human node (red node), it uses the robot's actions. 
-In the evaluation stage, newly added leaf nodes are first assessed for safety to ensure they do not result in collisions with obstacles or the human. 
-If a leaf node directs the robot toward an unsafe region, the algorithm removes that node from the tree and stops further expansion from that branch. 
-Once safety is confirmed, the leaf nodes are evaluated using the state evaluation module. In this module, all the leaf nodes—both human and robot—are passed through the trained RL model to assign a value to each node. This value reflects how the robot's pose is close to the desired pose in relation to the human. In other words, the closer the robot is to being directly in front of the human at a certain distance, the higher the value assigned to the node.
-Afterward, the human-related nodes are processed through the human future positioning probabilities module. This module assigns a probability to each human node based on the history of the human's positions over the past 3 seconds. It's important to note that all the robot nodes are assigned an equal probability of  1/6, where 6 represents the number of actions for the robot.
-Finally, In the backpropagation stage, the value obtained for each leaf node is propagated back through the tree, updating the values of all parent nodes up to the root node.
-
-
-At the end of expansion, which occurs over a $0.2$s interval, the immediate child node with the highest visit count $(n)$ is selected as the optimal action for the next time step. The algorithm then updates with the new poses of the human and robot and re-expands the tree for the subsequent time step.
-<!--               <img src="resrc/r.png" alt="dti.png"  class="text-center" style="width: 80%; max-width: 1100px">               -->
-        </div>
-      </div>     -->
+      <p> We propose a learning-based approach for local map generation and train a model that takes three inputs: an RGB image, a depth image, and the camera’s pitch angle. Mounted on the 
+          exoskeleton’s leg, the camera undergoes 3D rotational motion during walking, including roll, pitch, and yaw along the X, Y, and Z axes. Among these, the pitch angle has the most 
+          significant impact on mapping accuracy, as it directly effects how obstacles are perceived and projected in the BEV map. To address this, our model jointly encodes features from 
+          all three inputs and learns to predict the occupancy map representing the free and occupied areas in front of the robot. This design enables the system to account for camera motion 
+          and produce accurate and real-time map. 
+      </p>
+    </div>
+  </div>     
     
 
 <p style="padding-top: 1em; padding-bottom: 2em">
 
-    <h3>Experiments</h3>
+    <h1>Experiments</h1>
     <div class="container" style="text-align:center; padding:1rem">
 
    <p> 
